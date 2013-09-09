@@ -1,0 +1,25 @@
+{
+  "name": "gittle.js",
+  "version": "0.0.0",
+  "description": "gittle.js =========",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com:FriendCode/gittle.js.git"
+  },
+  "keywords": [
+    "gittle",
+    "git",
+    "js"
+  ],
+  "author": "Aaron O'Mullan",
+  "license": "Apache v2",
+  "dependencies": {
+    "gift": "0.0.6",
+    "underscore": "1.4.4",
+    "q": "0.9.7"
+  }
+}
