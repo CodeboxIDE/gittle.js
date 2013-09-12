@@ -1,6 +1,6 @@
 {
   "name": "gittle",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "gittle.js =========",
   "main": "index.js",
   "scripts": {
@@ -20,6 +20,7 @@
   "dependencies": {
     "gift": "0.0.6",
     "underscore": "1.4.4",
-    "q": "0.9.6"
+    "q": "0.9.6",
+    "qpatch": "0.0.1"
   }
 }
