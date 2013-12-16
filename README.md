@@ -1,4 +1,4 @@
-gittle.js
+Gittle
 =========
 
 A simple Node.js wrapper for the Git CLI. The API uses promises.
