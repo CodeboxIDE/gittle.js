@@ -1,1 +1,1 @@
-module.exports = require('./lib/repo').Repo;
+module.exports = require('./lib/index');
