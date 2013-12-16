@@ -1,1 +1,1 @@
-module.exports = require('./lib/gittle').Gittle;
+module.exports = require('./lib/repo').Repo;

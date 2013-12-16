@@ -1,7 +1,7 @@
 {
     "name": "gittle",
     "version": "0.0.6",
-    "description": "gittle.js =========",
+    "description": "Git wrapper library",
     "main": "index.js",
     "scripts": {
         "test": "NODE_PATH=lib node_modules/.bin/nodeunit test/*-test.js"
@@ -11,17 +11,15 @@
         "url": "git+ssh://git@github.com:FriendCode/gittle.js.git"
     },
     "keywords": [
-    "gittle",
-    "git",
-    "js"
+        "gittle",
+        "git",
+        "js"
     ],
     "author": "FriendCode",
     "license": "Apache v2",
     "dependencies": {
-        "gift": "0.0.6",
         "underscore": "1.4.4",
-        "q": "0.9.6",
-        "qpatch": "0.0.3"
+        "q": "0.9.6"
     },
     "devDependencies": {
         "nodeunit": "0.8.2"
