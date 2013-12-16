@@ -1,26 +1,39 @@
 {
-  "name": "gittle",
-  "version": "0.0.6",
-  "description": "gittle.js =========",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+ssh://git@github.com:FriendCode/gittle.js.git"
-  },
-  "keywords": [
+    "name": "gittle",
+    "version": "0.0.6",
+    "description": "gittle.js =========",
+    "main": "index.js",
+    "scripts": {
+        "test": "NODE_PATH=lib node_modules/.bin/nodeunit test/*-test.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com:FriendCode/gittle.js.git"
+    },
+    "keywords": [
     "gittle",
     "git",
     "js"
-  ],
-  "author": "Aaron O'Mullan",
-  "license": "Apache v2",
-  "dependencies": {
-    "gift": "0.0.6",
-    "underscore": "1.4.4",
-    "q": "0.9.6",
-    "qpatch": "0.0.3"
-  }
+    ],
+    "author": "FriendCode",
+    "license": "Apache v2",
+    "dependencies": {
+        "gift": "0.0.6",
+        "underscore": "1.4.4",
+        "q": "0.9.6",
+        "qpatch": "0.0.3"
+    },
+    "devDependencies": {
+        "nodeunit": "0.8.2"
+    },
+    "contributors": [
+        {
+            "name": "Aaron O'Mullan",
+            "email": "aaron.omullan@friendco.de"
+        },
+        {
+            "name": "Samy Pesse",
+            "email": "samy.pesse@friendco.de"
+        }
+    ]
 }
