@@ -1,6 +1,6 @@
 {
     "name": "gittle",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "description": "Git wrapper library",
     "main": "index.js",
     "scripts": {
