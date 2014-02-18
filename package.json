@@ -23,7 +23,8 @@
         "q": "0.9.6"
     },
     "devDependencies": {
-        "nodeunit": "0.8.2"
+        "nodeunit": "0.8.2",
+        "tmp": "0.0.23"
     },
     "contributors": [
         {

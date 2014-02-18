@@ -1,5 +1,4 @@
 
-
 module.exports = {
     // Use promise for testing
     qtest: function(d, test) {
