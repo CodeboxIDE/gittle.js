@@ -29,7 +29,7 @@ Gittle.init("./test").then(funciton(repo) {
 Clone a repository
 
 ```javascript
-Gittle.clone("https://github.com/FriendCode/gittle.js.git", "./test").then(funciton(repo) {
+Gittle.clone("https://github.com/FriendCode/gittle.js.git", "./test").then(function(repo) {
     // ...
 });
 ```
@@ -41,6 +41,20 @@ repo.status().then(function(status) {
     // ...
 });
 ```
+
+Push
+
+```javascript
+repo.push(remote, branch, {
+    // used for https push:
+    'username': "...",
+    'password': "..."
+}).then(function(status) {
+    // ...
+});
+```
+
+Method ```Gittle.clone```, ```Repo.push```, ```Repo.pull```, ```Repo.fetch``` accept as last arguemnt an object with 'username' and 'password' credentials for https authentication.
 
 List branches
 
