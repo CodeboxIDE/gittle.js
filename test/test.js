@@ -6,6 +6,7 @@ module.exports = {
             test.ok(true);
         }, function(err) {
             console.log("Error: ", err);
+            console.log(err.stack || "");
             test.ok(false);
         }).fin(function() {
             test.done();
