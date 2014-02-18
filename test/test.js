@@ -5,6 +5,7 @@ module.exports = {
         d.then(function(out) {
             test.ok(true);
         }, function(err) {
+            console.log("Error: ", err);
             test.ok(false);
         }).fin(function() {
             test.done();
