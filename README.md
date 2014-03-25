@@ -47,6 +47,7 @@ Check out [Authentication](#authentication) about how to configure https/ssh aut
 A commit is representated by a [Commit](#commit) object.
 
 * List all commits: ```repo.commits(start, limit, skip)```
+* Commit changes: ```repo.commit(message, options)```
 
 ##### Tags
 
@@ -93,7 +94,7 @@ A branch is representated by a [Head](#ref) object.
 Class **Head** inherit from **Ref**.
 
 * ```ref.name```: (String) name of this reference
-* ```ref.commit```: ([ACommit](#commit)) commit related to this ref.
+* ```ref.commit```: ([Commit](#commit)) commit related to this ref.
 
 ### Authentication
 
