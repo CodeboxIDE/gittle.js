@@ -15,7 +15,7 @@ npm install gittle
 var Gittle = require("gittle");
 ```
 
-#### Global Methods
+### Global Methods
 
 * Load a repository: ```var repo = new Gittle("./");```
 * Clone a repository: ```Gittle.clone("https://github.com/FriendCode/gittle.js.git", "./test")```
@@ -23,7 +23,7 @@ var Gittle = require("gittle");
 
 Check out [Authentication](#authentication) about how to configure https/ssh authentication for cloning.
 
-#### Repository:
+### Repository:
 
 ##### Status
 
@@ -44,6 +44,8 @@ Check out [Authentication](#authentication) about how to configure https/ssh aut
 
 ##### Commits
 
+A commit is representated by a [Commit](#commit) object.
+
 * List all commits: ```repo.commits(start, limit, skip)```
 
 ##### Tags
@@ -62,7 +64,19 @@ Check out [Authentication](#authentication) about how to configure https/ssh aut
 * Add a remote: ```repo.remore_add(name, url)```
 * Delete a remote: ```repo.remote_remove(name)```
 
-##### Authentication
+### Commit
+
+* ```commit.id```: (String) id for this commit
+* ```commit.author```: ([Author](author)) author of this commit
+* ```commit.commiter```: ([Author](author)) commiter of this commit
+* ```commit.message```: (String) message for this commit
+* ```commit.authored_date```: (String) dat when the commit was authored
+* ```commit.committed_date```: (String) dat when the commit was commited
+
+* Get the files tree for this commit: ```commit.tree()```
+* Get the parents commits: ```commit.parents()```
+
+### Authentication
 
 A last argument could be use for authentication on ```Gittle.clone```, ```repo.push```, ```repo.pull```, ```repo.fetch```:
 ```javascript
