@@ -51,10 +51,15 @@ A commit is representated by a [Commit](#commit) object.
 ##### Tags
 
 * List all tags: ```repo.tags()```
+* Create a new tag: ```repo.create_tag(name, options)```
+* Delete a tag: ```repo.delete_tag(name)```
 
 ##### Branches
 
+A branch is representated by a [Head](#ref) object.
+
 * List all branches: ```repo.branches()```
+* Get a branch from its name: ```repo.branche(name)```
 * Create a branch: ```repo.create_branch(name)```
 * Delete a branch: ```repo.delete_branch(name)```
 
@@ -82,6 +87,13 @@ A commit is representated by a [Commit](#commit) object.
 * ```actor.name```: (String) name of this actor
 * ```actor.email```: (String) email address of this actor
 * ```actor.hash```: (String) hash of this actor (md5 hash of the email)
+
+### Ref
+
+Class **Head** inherit from **Ref**.
+
+* ```ref.name```: (String) name of this reference
+* ```ref.commit```: ([ACommit](#commit)) commit related to this ref.
 
 ### Authentication
 
