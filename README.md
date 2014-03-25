@@ -11,47 +11,19 @@ npm install gittle
 
 ### How to use it?
 
-#### Global Methods
-
-##### Load a repository
-
 ```javascript
 var Gittle = require("gittle");
-var repo = new Gittle("./");
 ```
 
-##### Initialize a new repository
+#### Global Methods
 
-```javascript
-Gittle.init("./test").then(function(repo) {
-    // ...
-});
-```
+* Load a repository: ```var repo = new Gittle("./");```
+* Clone a repository: ```Gittle.clone("https://github.com/FriendCode/gittle.js.git", "./test")```
+* Initialize an empty repository: ```Gittle.init("./test")```
 
-##### Clone a repository
+Check out [Authentication](#authentication) about how to configure https/ssh authentication for cloning.
 
-```javascript
-Gittle.clone("https://github.com/FriendCode/gittle.js.git", "./test").then(function(repo) {
-    // ...
-});
-```
-
-##### Authentication
-
-A last argument could be use for authentication on ```Gittle.clone```, ```repo.push```, ```repo.pull```, ```repo.fetch```:
-```javascript
-{
-    // SSH:
-    'passphrase': "...",
-    'refuseUnknownHost': true, // Default is false
-    
-    // HTTPS:
-    'username': "...",
-    'password': "..."
-}
-```
-
-#### Repository Methods:
+#### Repository:
 
 ##### Status
 
@@ -70,7 +42,6 @@ A last argument could be use for authentication on ```Gittle.clone```, ```repo.p
 
 Check out [Authentication](#authentication) about how to configure https/ssh authentication.
 
-
 ##### Commits
 
 * List all commits: ```repo.commits(start, limit, skip)```
@@ -82,6 +53,26 @@ Check out [Authentication](#authentication) about how to configure https/ssh aut
 ##### Branches
 
 * List all branches: ```repo.branches()```
-* Create a branch: ```repo.create_branch("branch_name")```
-* Delete a branch: ```repo.delete_branch("branch_name")```
+* Create a branch: ```repo.create_branch(name)```
+* Delete a branch: ```repo.delete_branch(name)```
 
+##### Remotes
+
+* List all remotes: ```repo.remotes()```
+* Add a remote: ```repo.remore_add(name, url)```
+* Delete a remote: ```repo.remote_remove(name)```
+
+##### Authentication
+
+A last argument could be use for authentication on ```Gittle.clone```, ```repo.push```, ```repo.pull```, ```repo.fetch```:
+```javascript
+{
+    // SSH:
+    'passphrase': "...",
+    'refuseUnknownHost': true, // Default is false
+    
+    // HTTPS:
+    'username': "...",
+    'password': "..."
+}
+```
