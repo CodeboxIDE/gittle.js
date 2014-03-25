@@ -38,7 +38,7 @@ Gittle.clone("https://github.com/FriendCode/gittle.js.git", "./test").then(funct
 
 ##### Authentication
 
-A third argument could be use for authentication on ```Gittle.clone```, ```repo.push```, ```repo.pull```, ```repo.fetch```:
+A last argument could be use for authentication on ```Gittle.clone```, ```repo.push```, ```repo.pull```, ```repo.fetch```:
 ```javascript
 {
     // SSH:
@@ -53,62 +53,35 @@ A third argument could be use for authentication on ```Gittle.clone```, ```repo.
 
 #### Repository Methods:
 
-##### Get repository status
+##### Status
 
-```javascript
-repo.status().then(function(status) {
-    // ...
-});
-```
+* Get status: ```repo.status()```
 
-##### Push
+##### Identity
 
-```javascript
-repo.push(remote, branch).then(function(status) {
-    // ...
-});
-```
+* Get identity: ```repo.identity()```, Returns an Actor object
+* Set identity: ```repo.identify(actor)```, actor is an object like: ```{name: "", email: ""}```
+
+##### Push/pull
+
+* Pull: ```repo.pull(remote, branch)```
+* Push: ```repo.push(remote, branch)```
+* Fetch: ```repo.fetch(remote)```
 
 Check out [Authentication](#authentication) about how to configure https/ssh authentication.
 
-##### List branches
 
-```javascript
-repo.branches().then(function(branches) {
-    console.log(branches);
-});
-```
+##### Commits
 
-##### List commits
+* List all commits: ```repo.commits(start, limit, skip)```
 
-```javascript
-repo.commits(start, limit, skip).then(function(commits) {
-    console.log(commits);
-});
-```
+##### Tags
 
-##### List tags
+* List all tags: ```repo.tags()```
 
-```javascript
-repo.tags().then(function(tags) {
-    console.log(tags);
-});
-```
+##### Branches
 
-##### Create a branch
-
-```javascript
-repo.create_branch("branch_name").then(function() {
-    // ...
-});
-```
-
-##### Delete a branch
-
-```javascript
-repo.delete_branch("branch_name").then(function() {
-    // ...
-});
-```
-
+* List all branches: ```repo.branches()```
+* Create a branch: ```repo.create_branch("branch_name")```
+* Delete a branch: ```repo.delete_branch("branch_name")```
 
