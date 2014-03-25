@@ -15,13 +15,13 @@ npm install gittle
 var Gittle = require("gittle");
 ```
 
-### Global Methods
-
 * Load a repository: ```var repo = new Gittle("./");```
 * Clone a repository: ```Gittle.clone("https://github.com/FriendCode/gittle.js.git", "./test")```
 * Initialize an empty repository: ```Gittle.init("./test")```
 
 Check out [Authentication](#authentication) about how to configure https/ssh authentication for cloning.
+
+* * *
 
 ### Repository:
 
@@ -70,18 +70,20 @@ A branch is representated by a [Head](#ref) object.
 * Add a remote: ```repo.remore_add(name, url)```
 * Delete a remote: ```repo.remote_remove(name)```
 
+* * *
+
 ### Commit
 
 * ```commit.id```: (String) id for this commit
 * ```commit.author```: ([Actor](#actor)) author of this commit
 * ```commit.commiter```: ([Actor](#actor)) commiter of this commit
 * ```commit.message```: (String) message for this commit
-* ```commit.authored_date```: (String) dat when the commit was authored
-* ```commit.committed_date```: (String) dat when the commit was commited
-
-
+* ```commit.authored_date```: (String) date when the commit was authored
+* ```commit.committed_date```: (String) date when the commit was commited
 * Get the files tree for this commit: ```commit.tree()```
 * Get the parents commits: ```commit.parents()```
+
+* * *
 
 ### Actor
 
@@ -89,12 +91,16 @@ A branch is representated by a [Head](#ref) object.
 * ```actor.email```: (String) email address of this actor
 * ```actor.hash```: (String) hash of this actor (md5 hash of the email)
 
+* * *
+
 ### Ref
 
 Class **Head** inherit from **Ref**.
 
 * ```ref.name```: (String) name of this reference
 * ```ref.commit```: ([Commit](#commit)) commit related to this ref.
+
+* * *
 
 ### Authentication
 
