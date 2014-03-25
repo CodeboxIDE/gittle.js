@@ -31,7 +31,7 @@ Check out [Authentication](#authentication) about how to configure https/ssh aut
 
 ##### Identity
 
-* Get identity: ```repo.identity()```, Returns an Actor object
+* Get identity: ```repo.identity()```, Returns an [Actor](#actor) object
 * Set identity: ```repo.identify(actor)```, actor is an object like: ```{name: "", email: ""}```
 
 ##### Push/pull
@@ -67,14 +67,21 @@ A commit is representated by a [Commit](#commit) object.
 ### Commit
 
 * ```commit.id```: (String) id for this commit
-* ```commit.author```: ([Author](author)) author of this commit
-* ```commit.commiter```: ([Author](author)) commiter of this commit
+* ```commit.author```: ([Actor](#actor)) author of this commit
+* ```commit.commiter```: ([Actor](#actor)) commiter of this commit
 * ```commit.message```: (String) message for this commit
 * ```commit.authored_date```: (String) dat when the commit was authored
 * ```commit.committed_date```: (String) dat when the commit was commited
 
+
 * Get the files tree for this commit: ```commit.tree()```
 * Get the parents commits: ```commit.parents()```
+
+### Actor
+
+* ```actor.name```: (String) name of this actor
+* ```actor.email```: (String) email address of this actor
+* ```actor.hash```: (String) hash of this actor (md5 hash of the email)
 
 ### Authentication
 
