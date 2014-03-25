@@ -1,32 +1,34 @@
 Gittle
 =========
 
-A simple Node.js wrapper for the Git CLI. The API uses promises.
+A simple Node.js wrapper for the Git CLI. The API uses promises. This library is used in [Codebox](https://github.com/FriendCode/codebox).
 
-#### Installation
+### Installation
 
 ```
 npm install gittle
 ```
 
-#### Examples
+### How to use it?
 
-Load a repository
+#### Global Methods
+
+##### Load a repository
 
 ```javascript
 var Gittle = require("gittle");
 var repo = new Gittle("./");
 ```
 
-Initialize a repository
+##### Initialize a new repository
 
 ```javascript
-Gittle.init("./test").then(funciton(repo) {
+Gittle.init("./test").then(function(repo) {
     // ...
 });
 ```
 
-Clone a repository
+##### Clone a repository
 
 ```javascript
 Gittle.clone("https://github.com/FriendCode/gittle.js.git", "./test").then(function(repo) {
@@ -34,7 +36,24 @@ Gittle.clone("https://github.com/FriendCode/gittle.js.git", "./test").then(funct
 });
 ```
 
-Get repository status
+##### Authentication
+
+A third argument could be use for authentication on ```Gittle.clone```, ```repo.push```, ```repo.pull```, ```repo.fetch```:
+```javascript
+{
+    // SSH:
+    'passphrase': "...",
+    'refuseUnknownHost': true, // Default is false
+    
+    // HTTPS:
+    'username': "...",
+    'password': "..."
+}
+```
+
+#### Repository Methods:
+
+##### Get repository status
 
 ```javascript
 repo.status().then(function(status) {
@@ -42,21 +61,17 @@ repo.status().then(function(status) {
 });
 ```
 
-Push
+##### Push
 
 ```javascript
-repo.push(remote, branch, {
-    // used for https push:
-    'username': "...",
-    'password': "..."
-}).then(function(status) {
+repo.push(remote, branch).then(function(status) {
     // ...
 });
 ```
 
-Method ```Gittle.clone```, ```Repo.push```, ```Repo.pull```, ```Repo.fetch``` accept as last arguemnt an object with 'username' and 'password' credentials for https authentication.
+Check out [Authentication](#authentication) about how to configure https/ssh authentication.
 
-List branches
+##### List branches
 
 ```javascript
 repo.branches().then(function(branches) {
@@ -64,7 +79,7 @@ repo.branches().then(function(branches) {
 });
 ```
 
-List commits
+##### List commits
 
 ```javascript
 repo.commits(start, limit, skip).then(function(commits) {
@@ -72,7 +87,7 @@ repo.commits(start, limit, skip).then(function(commits) {
 });
 ```
 
-List tags
+##### List tags
 
 ```javascript
 repo.tags().then(function(tags) {
@@ -80,7 +95,7 @@ repo.tags().then(function(tags) {
 });
 ```
 
-Create a branch
+##### Create a branch
 
 ```javascript
 repo.create_branch("branch_name").then(function() {
@@ -88,7 +103,7 @@ repo.create_branch("branch_name").then(function() {
 });
 ```
 
-Delete a branch
+##### Delete a branch
 
 ```javascript
 repo.delete_branch("branch_name").then(function() {
