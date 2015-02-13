@@ -18,9 +18,9 @@
     "author": "FriendCode",
     "license": "Apache v2",
     "dependencies": {
-        "pty.js": "0.2.3",
-        "underscore": "1.4.4",
-        "q": "0.9.6"
+        "pty.js": "0.2.5",
+        "lodash": "3.x.x || 2.4.x",
+        "q": "1.1.2"
     },
     "devDependencies": {
         "nodeunit": "0.8.2",
