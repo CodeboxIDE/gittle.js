@@ -1,6 +1,6 @@
 {
     "name": "gittle",
-    "version": "0.2.3",
+    "version": "0.2.4",
     "description": "Simple Node.js wrapper for the Git CLI",
     "main": "index.js",
     "scripts": {
