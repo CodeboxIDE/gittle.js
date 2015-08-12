@@ -16,9 +16,9 @@
         "js"
     ],
     "author": "FriendCode",
-    "license": "Apache v2",
+    "license": "Apache-2.0",
     "dependencies": {
-        "pty.js": "0.2.5",
+        "pty.js": "0.2.13",
         "lodash": "3.x.x || 2.4.x",
         "q": "1.1.2"
     },
